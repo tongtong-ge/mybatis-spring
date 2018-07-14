@@ -36,6 +36,12 @@ public class DictController {
 		return mv;
 	}
 	
+	/**
+	 * 新增或修改字典信息页面，使用get跳转到页面
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public ModelAndView add(Long id) {
 		ModelAndView mv = new ModelAndView("dict_add");
@@ -50,6 +56,12 @@ public class DictController {
 		return mv;
 	}
 	
+	/**
+	 * 新增或修改字典信息时，通过表单post提交数据
+	 * 
+	 * @param sysDict
+	 * @return
+	 */
 	@RequestMapping(value = "add", method = RequestMethod.POST)
 	public ModelAndView save(SysDict sysDict) {
 		ModelAndView mv = new ModelAndView("dict_add");
@@ -65,6 +77,12 @@ public class DictController {
 		return mv;
 	}
 	
+	/**
+	 * 通过id删除字典信息
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value = "delete", method = RequestMethod.POST)
 	@ResponseBody
 	public ModelMap delete(@RequestParam Long id) {
